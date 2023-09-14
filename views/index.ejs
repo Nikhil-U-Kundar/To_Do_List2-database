@@ -12,9 +12,12 @@
 <body>
  <div class="box">
    <% for(var i=0;i<tasks.length;i++){ %>
-   <div class="item"> 
-    <input type="checkbox"> 
-      <p><%= tasks[i]%> </p></div>
+   <form action="/delete"method="post">
+
+    <div class="item"> 
+        <input type="checkbox" name="checkbox" value="<%= tasks[i]._id%>" onchange="this.form.submit()"> 
+          <p><%= tasks[i].task %> </p></div>
+   </form>
        <% } %>
 
     <form  class="item"action="/" method="post">
